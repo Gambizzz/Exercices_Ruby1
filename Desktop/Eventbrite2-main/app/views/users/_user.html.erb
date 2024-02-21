@@ -1,0 +1,51 @@
+<div id="<%= dom_id user %>">
+  <p>
+    <strong>First name:</strong>
+    <%= user.first_name %>
+  </p>
+
+  <p>
+    <strong>Last name:</strong>
+    <%= user.last_name %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= user.description %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= user.email %>
+  </p>
+
+  <p>
+    <strong>Encrypted password:</strong>
+    <%= user.encrypted_password %>
+  </p>
+
+</div>
+
+
+<div class="row align-item-center justify-content-center">
+  <div class="col-sm-10">
+    <div class="card">
+      <h5 class="card-header">Mes évènements</h5>
+      <div class="card-body">
+        <div class="row card-deck justify-content-center">
+        <% if @events %>
+         <% @events.each do |event| %>
+          <p>
+            <strong>Title:</strong>
+            <%= event.title %>
+          </p>
+          <%= link_to "Show event", event_path(event) %>
+          <% end %>
+          <% end %>
+        
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
